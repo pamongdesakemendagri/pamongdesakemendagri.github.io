@@ -15,10 +15,10 @@ $(function () {
         var scroll = $(window).scrollTop();
         if (scroll < 20) {
             $(".navbar-area").removeClass("sticky");
-            $(".navbar .navbar-brand img").attr("src", "https://support-siasn.bkn.go.id/assets/images/logo.png");
+            $(".navbar .navbar-brand img").attr("src", "https://pd.my.id/imgs/logo.png");
         } else {
             $(".navbar-area").addClass("sticky");
-            $(".navbar .navbar-brand img").attr("src", "https://support-siasn.bkn.go.id/assets/images/logo-2.png");
+            $(".navbar .navbar-brand img").attr("src", "https://pd.my.id/imgs/logo.png");
         }
     });
 
