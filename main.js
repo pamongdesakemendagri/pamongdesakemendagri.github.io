@@ -1,5 +1,11 @@
 import {get} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/api.js";
 import {setInner} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/element.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/cookie.js";
+
+
+if (getCookie("login")){
+    setInner('tombollogin','Dashboard');
+}
 
 get("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/phone/all",runafterGet);
 get("https://asia-southeast2-awangga.cloudfunctions.net/pamongdesa/data/lms/random/testi",runafterGetTesti);
