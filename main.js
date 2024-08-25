@@ -20,7 +20,7 @@ function runafterGet(result){
 function runafterGetTesti(result){
     result.list.forEach(function(testi,index) {
         let no=index+1;
-        let namavar='testi'+toString(no)
+        let namavar='testi'+no.toString()
         setInner(namavar+'isi',testi.isi);
         setInner(namavar+'nama',testi.nama);
         setInner(namavar+'daerah',testi.daerah);
