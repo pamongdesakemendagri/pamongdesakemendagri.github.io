@@ -4,6 +4,7 @@ import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/cookie.js
 
 
 if (getCookie("login")){
+    document.getElementById('tombollogin').href = '/auth';
     setInner('tombollogin','Dashboard');
 }
 
