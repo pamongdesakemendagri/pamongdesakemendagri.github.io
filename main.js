@@ -19,6 +19,16 @@ function runafterGet(result){
 
 function runafterGetTesti(result){
     result.list.forEach(addTestimonial);
+    // Setelah semua testimonial ditambahkan, inisialisasi slick slider
+$('.testimonial-active').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: true,
+    arrows: false
+});
 }
 
 
