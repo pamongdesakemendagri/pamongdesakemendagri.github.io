@@ -246,7 +246,11 @@
                             </div> <!-- section title -->
                             <p class="text">
                                 <strong>1. Official Nomor Contact Center</strong><br />
-                                Pastikan nomor yang dikontak official dari kami, bisa dilihat di list berikut.<br />
+                                Pastikan nomor yang dikontak official dari kami, bisa dilihat di list berikut.
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#whatsappModal">
+                                    Lihat Nomor Official WhatsApp
+                                </button>
+                                <br />
                                 <strong>2. Open Chat</strong><br />
                                 Pengguna Melakukan chat WhatsApp ke nomor wa helpdesk, maka akan otomatis muncul menu utama<br />
                                 <strong>3. Pemilihan Menu Utama</strong><br />
@@ -520,7 +524,30 @@
         </div>
     </section>
 -->
-
+<!-- Modal -->
+<div class="modal fade" id="whatsappModal" tabindex="-1" role="dialog" aria-labelledby="whatsappModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="whatsappModalLabel">Nomor Official WhatsApp</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Pastikan nomor yang dikontak official dari kami, bisa dilihat di list berikut:</p>
+                <ul>
+                    <li>+62 812-3456-7890 (Helpdesk Utama)</li>
+                    <li>+62 811-2345-6789 (Helpdesk Regional)</li>
+                    <li>+62 813-4567-8901 (Helpdesk Teknologi)</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
     <!--====== PART ENDS ======-->
 
     <!--====== Jquery js ======-->
