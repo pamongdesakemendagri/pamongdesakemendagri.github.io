@@ -18,11 +18,85 @@ function runafterGet(result){
 }
 
 function runafterGetTesti(result){
-    result.list.forEach(function(testi,index) {
-        let no=index+1;
-        let namavar='testi'+no.toString();
-        setInner(namavar+'isi',testi.isi);
-        setInner(namavar+'nama',testi.nama);
-        setInner(namavar+'daerah',testi.daerah);
-     });
+    result.list.forEach(addTestimonial);
+}
+
+
+// Fungsi untuk membuat elemen testimonial baru
+function addTestimonial(testi) {
+    // Membuat elemen div untuk testimonial baru
+    const colDiv = document.createElement('div');
+    colDiv.classList.add('col-lg-4');
+
+    const testimonialDiv = document.createElement('div');
+    testimonialDiv.classList.add('single-testimonial');
+
+    // Bagian review
+    const reviewDiv = document.createElement('div');
+    reviewDiv.classList.add('testimonial-review', 'd-flex', 'align-items-center', 'justify-content-between');
+
+    const quotaDiv = document.createElement('div');
+    quotaDiv.classList.add('quota');
+    quotaDiv.innerHTML = '<i class="lni-quotation"></i>';
+
+    const starDiv = document.createElement('div');
+    starDiv.classList.add('star');
+    starDiv.innerHTML = `
+        <ul>
+            <li><i class="lni-star-filled"></i></li>
+            <li><i class="lni-star-filled"></i></li>
+            <li><i class="lni-star-filled"></i></li>
+            <li><i class="lni-star-filled"></i></li>
+            <li><i class="lni-star-filled"></i></li>
+        </ul>
+    `;
+
+    reviewDiv.appendChild(quotaDiv);
+    reviewDiv.appendChild(starDiv);
+
+    // Bagian text
+    const textDiv = document.createElement('div');
+    textDiv.classList.add('testimonial-text');
+    const textP = document.createElement('p');
+    textP.classList.add('text');
+    textP.textContent = testi.isi;
+    textDiv.appendChild(textP);
+
+    // Bagian author
+    const authorDiv = document.createElement('div');
+    authorDiv.classList.add('testimonial-author', 'd-flex', 'align-items-center');
+
+    const authorImageDiv = document.createElement('div');
+    authorImageDiv.classList.add('author-image');
+    authorImageDiv.innerHTML = `
+        <img class="shape" src="imgs/textimonial-shape.svg" alt="shape">
+        <img class="author" src="imgs/user2.png" alt="author">
+    `;
+
+    const authorContentDiv = document.createElement('div');
+    authorContentDiv.classList.add('author-content', 'media-body');
+    const authorNameH6 = document.createElement('h6');
+    authorNameH6.classList.add('holder-name');
+    authorNameH6.textContent = testi.nama;
+
+    const authorDaerahP = document.createElement('p');
+    authorDaerahP.classList.add('text');
+    authorDaerahP.textContent = testi.daerah;
+
+    authorContentDiv.appendChild(authorNameH6);
+    authorContentDiv.appendChild(authorDaerahP);
+
+    authorDiv.appendChild(authorImageDiv);
+    authorDiv.appendChild(authorContentDiv);
+
+    // Menggabungkan semua bagian ke dalam div testimonial
+    testimonialDiv.appendChild(reviewDiv);
+    testimonialDiv.appendChild(textDiv);
+    testimonialDiv.appendChild(authorDiv);
+
+    colDiv.appendChild(testimonialDiv);
+
+    // Menambahkan testimonial ke dalam container
+    const testimonialContainer = document.querySelector('.testimonial-active');
+    testimonialContainer.appendChild(colDiv);
 }
