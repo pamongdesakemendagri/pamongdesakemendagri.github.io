@@ -17,18 +17,49 @@ function runafterGet(result){
 
 }
 
-function runafterGetTesti(result){
-    result.list.forEach(addTestimonial);
-    // Setelah semua testimonial ditambahkan, inisialisasi slick slider
-$('.testimonial-active').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    dots: true,
-    arrows: false
-});
+async function runafterGetTesti(result){
+    //await result.list.forEach(addTestimonial);
+    for (const testi of result.list) {
+        addTestimonial(testi);
+    }
+    //===== testimonial active
+
+    $('.testimonial-active').slick({
+        dots: true,
+        speed: 800,
+        arrows: false,
+        centerMode: true,
+        centerPadding: "0",
+        slidesToShow: 3,
+        slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    centerMode: false,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
+    });
 }
 
 
